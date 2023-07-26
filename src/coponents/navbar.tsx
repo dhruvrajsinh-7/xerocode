@@ -4,9 +4,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import Logo from "public/logo.png";
-
 import { useRouter } from "next/navigation";
-export default function ProfilePage() {
+export default function Navbar() {
   const router = useRouter();
   const [data, setData] = useState("nothing");
   const logout = async () => {

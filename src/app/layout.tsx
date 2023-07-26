@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import "./globals.css";
 
 export const metadata = {
   title: "Create Next App",
