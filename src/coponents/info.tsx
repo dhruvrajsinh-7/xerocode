@@ -1,17 +1,21 @@
+import { Urbanist } from "next/font/google";
+
 export default function Info() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="w-[80%] text-center flex mt-40 text-5xl font-semibold items-center justify-center ">
-        <h1 className=" font-semibold leading-normal transform  bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text text-transparent ">
-          Boost the speed of your development and test cycles
-        </h1>
-      </div>
-      <div className="w-[90%] text-center ">
-        <h1 className="text-white text-3xl">
-          With AI-driven test case generation and code analysis, problems may be
-          found and fixed more quickly.
-        </h1>
-      </div>
+    <div className="flex-col  flex justify-center items-center py-2 gap-2">
+      <span
+        className="text-4xl mt-24 font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-[55%] text-center leading-8 animate-fade-in"
+        style={{ fontFamily: "'Urbanist', sans-serif" }}
+      >
+        Boost the speed of your development and test cycles.
+      </span>
+      <span
+        className="leading-6 text-center text-2xl w-[64%] animate-fade-in"
+        style={{ fontFamily: "'Urbanist', sans-serif" }}
+      >
+        With AI-driven test case generation and code analysis, problems may be
+        found and fixed more quickly.
+      </span>
     </div>
   );
 }

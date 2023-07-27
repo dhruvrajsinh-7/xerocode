@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss/utilities";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -15,7 +16,19 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+.animate-fade-in {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
 body {
   color: rgb(var(--foreground-rgb));
   font-family: "Open Sans";

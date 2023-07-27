@@ -1,5 +1,3 @@
-import React from "react";
-
 interface FeatureItemProps {
   title: string;
   description: string[];
@@ -7,9 +5,9 @@ interface FeatureItemProps {
 
 const FeatureItem: React.FC<FeatureItemProps> = ({ title, description }) => {
   return (
-    <div className="bg-[#181924] p-2 my-6 rounded-lg">
+    <div className="bg-[#181924] p-2 my-6 rounded-3xl">
       <div className="p-4">
-        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-7 md:leading-8 lg:leading-9 tracking-wide text-transparent bg-gradient-to-r from-blue-700 to-purple-500 bg-clip-text">
+        <h1 className=" text-2xl md:text-3xl lg:text-4xl leading-7 md:leading-8 lg:leading-9 tracking-wide  bg-gradient-to-r from-blue-700 to-purple-700 via-pink-300 bg-clip-text text-transparent">
           {title}
         </h1>
         <div className="text-white text-sm font-normal mt-3 mb-16">
