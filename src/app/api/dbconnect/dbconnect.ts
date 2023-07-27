@@ -1,11 +1,19 @@
 import mongoose from "mongoose";
 
+let isConnected: boolean;
+let connection: mongoose.Connection | null = null;
+
 export async function connect() {
   try {
-    mongoose.connect(process.env.MONGO_URI!);
-    const connection = mongoose.connection;
+    if (isConnected && connection) {
+      return connection;
+    }
+
+    await mongoose.connect(process.env.MONGO_URI as string);
+    connection = mongoose.connection;
 
     connection.on("connected", () => {
+      isConnected = true;
       console.log("MongoDB connected successfully");
     });
 
@@ -15,8 +23,11 @@ export async function connect() {
       );
       process.exit();
     });
+
+    return connection;
   } catch (error) {
     console.log("Something goes wrong!");
     console.log(error);
+    throw error;
   }
 }

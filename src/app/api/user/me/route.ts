@@ -1,7 +1,7 @@
 import { gettoken } from "@/helpers/gettoken";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
-import { connect } from "@/dbconnect/dbconnect";
+import { connect } from "@/app/api/dbconnect/dbconnect";
 
 connect();
 

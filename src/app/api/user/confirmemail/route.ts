@@ -1,13 +1,14 @@
-import { connect } from "@/dbconnect/dbconnect";
+// confirmemail.ts (server-side)
 import { NextRequest, NextResponse } from "next/server";
+import { connect } from "@/app/api/dbconnect/dbconnect";
 import User from "@/models/userModel";
 
-connect();
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
     const { token } = reqBody;
-    console.log(token);
+
+    await connect();
 
     const user = await User.findOne({
       verifyToken: token,
@@ -17,9 +18,8 @@ export async function POST(request: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "Invalid token" }, { status: 400 });
     }
-    console.log(user);
 
-    user.isVerfied = true;
+    user.isVerified = true;
     user.verifyToken = undefined;
     user.verifyTokenExpiry = undefined;
     await user.save();

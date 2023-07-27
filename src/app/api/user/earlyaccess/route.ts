@@ -1,15 +1,14 @@
-import { connect } from "@/dbconnect/dbconnect";
+import { connect } from "@/app/api/dbconnect/dbconnect";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
 import jwt, { Secret, JwtPayload } from "jsonwebtoken";
 import { sendEmail } from "@/helpers/mailservice";
 
-connect();
-
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
     const { token } = reqBody;
+    await connect();
 
     if (!process.env.TOKEN_SECRET) {
       return NextResponse.json(

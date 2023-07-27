@@ -8,14 +8,18 @@ import HeaderHero from "@/coponents/headerhero";
 import Info from "@/coponents/info";
 import Feature from "@/coponents/feature";
 import Footer from "@/coponents/Footer";
+import { Toaster, toast } from "react-hot-toast";
+
 export default function Home() {
   return (
-    <div className="">
+    <>
       <Navbar />
       <HeaderHero />
       <Info />
       <Feature />
       <Footer />
-    </div>
+
+      <Toaster position="top-right" />
+    </>
   );
 }

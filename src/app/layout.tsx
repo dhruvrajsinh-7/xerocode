@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Html } from "next/document";
 import "./globals.css";
 
 export const metadata = {
@@ -8,15 +9,15 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <html>
+      {/* <Head> */}
+      {/* <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="stylesheet"
+      /> */}
+      {/* </Head> */}
       <body className="font-sans">{children}</body>
-    </>
+    </html>
   );
 };
 
