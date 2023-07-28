@@ -9,6 +9,7 @@ import Info from "@/coponents/info";
 import Feature from "@/coponents/feature";
 import Footer from "@/coponents/Footer";
 import { Toaster, toast } from "react-hot-toast";
+import Workingtask from "@/coponents/Workingtask";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <HeaderHero />
       <Info />
+      <Workingtask />
       <Feature />
       <Footer />
 

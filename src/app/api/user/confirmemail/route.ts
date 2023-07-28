@@ -1,4 +1,3 @@
-// confirmemail.ts (server-side)
 import { NextRequest, NextResponse } from "next/server";
 import { connect } from "@/app/api/dbconnect/dbconnect";
 import User from "@/models/userModel";
